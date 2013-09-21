@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mykitchen"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="MyKitchen"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.mykitchen.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.mykitchen.MainActivity"
+           	<intent-filter >
+           	    <action android:name="android.intent.action.MAIN" />
+           	    </intent-filter>
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.mykitchen.SearchRecipeActivity"
+            android:label="@string/title_activity_search_recipe"
+            android:parentActivityName="MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.mykitchen.MyKitchenActivity"
+            android:label="@string/title_activity_my_kitchen"
+            android:parentActivityName="MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.mykitchen.MyFavoritesActivity"
+            android:label="@string/title_activity_my_favorites"
+            android:parentActivityName="MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.mykitchen.MyProfileActivity"
+            android:label="@string/title_activity_my_profile"
+            android:parentActivityName="MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
