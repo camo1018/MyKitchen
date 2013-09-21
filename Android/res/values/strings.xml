@@ -13,5 +13,6 @@
     <string name="remove">Remove</string>
     <string name="profile">Profile</string>
     <string name="edit">Edit</string>
+    <string name="webServer">http://192.168.1.90:82</string>
 
 </resources>
