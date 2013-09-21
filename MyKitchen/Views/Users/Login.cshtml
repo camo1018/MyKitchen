@@ -1,0 +1,33 @@
+﻿@model MyKitchen.Controllers.UsersController.LoginRazorModel
+
+<h2>Log In</h2>
+
+<body>
+    <div>Log in for me, please.</div>
+    <div>
+        <span>
+            <label>Username:</label>
+            <input type="text" id="inputUsername" value="@Model.username" size="11" style="width:auto"/>
+        </span>
+        <span>
+            <label>Password:</label>
+            <input type="text" id="inputPassword" value="@Model.password" size="11" style="width:auto"/>
+        </span>
+    </div>
+    <br/>
+    <div>
+        <input type="button" id="buttonLogin" value="Login"/>
+    </div>
+    <br/>
+    <div>
+        <h4 style="display:none; color:red" id="failureMessage">Your username and password combination is incorrect, or the user does not exist in the database.</h4>
+    </div>
+    <br/>
+</body>
+
+@Html.ActionLink("Register", "Registration", "Users", routeValues: null, htmlAttributes: null)
+
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Custom/Login.js")" type="text/javascript"></script>
+
+

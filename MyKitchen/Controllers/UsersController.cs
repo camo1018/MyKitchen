@@ -16,7 +16,7 @@ namespace MyKitchen.Controllers
             public string newUsername, newPassword;
         }
 
-        public class IndexRazorModel
+        public class LoginRazorModel
         {
             public string username, password;
         }
@@ -24,7 +24,12 @@ namespace MyKitchen.Controllers
 
         public ActionResult Index()
         {
-            return View(new IndexRazorModel());
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View(new LoginRazorModel());
         }
 
         public ActionResult Registration()
@@ -50,10 +55,7 @@ namespace MyKitchen.Controllers
         {
             var hasAny = this.Database.RegisteredUser.Any(user => user.userName == username && user.userPassword == password);
 
-            if (hasAny)
-                return Json(true);
-
-            return Json(false);
+            return Json(hasAny);
         }
     }
 }
