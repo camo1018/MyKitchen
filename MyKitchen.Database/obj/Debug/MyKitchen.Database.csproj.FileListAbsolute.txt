@@ -1,0 +1,5 @@
+C:\Projects\MyKitchen\MyKitchen.Database\bin\Debug\MyKitchen.Database.dll
+C:\Projects\MyKitchen\MyKitchen.Database\bin\Debug\MyKitchen.Database.pdb
+C:\Projects\MyKitchen\MyKitchen.Database\obj\Debug\MyKitchen.Database.csprojResolveAssemblyReference.cache
+C:\Projects\MyKitchen\MyKitchen.Database\obj\Debug\MyKitchen.Database.dll
+C:\Projects\MyKitchen\MyKitchen.Database\obj\Debug\MyKitchen.Database.pdb

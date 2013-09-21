@@ -12,6 +12,7 @@ namespace MyKitchen.Database
 
         private IQueryable<Recipe> recipe;
         private IQueryable<Ingredient> ingredient;
+        private IQueryable<RegisteredUser> registeredUser;
 
         public KitchenDatabase(IDbConnection connection)
         {
@@ -49,6 +50,13 @@ namespace MyKitchen.Database
             get { return ingredient ?? (ingredient = context.GetTable<Ingredient>()); }
 
             private set { ingredient = value; }
+        }
+
+        public IQueryable<RegisteredUser> RegisteredUser
+        {
+            get { return registeredUser ?? (registeredUser = context.GetTable<RegisteredUser>()); }
+
+            private set { registeredUser = value; }
         }
 
         public void Dispose()

@@ -105,4 +105,17 @@ namespace MyKitchen.Database
         [Column(CanBeNull = false)]
         public string measuringType { get; set; }
     }
+
+    [Table]
+    public class RegisteredUser
+    {
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        public int ID { get; set; }
+
+        [Column(CanBeNull = false)]
+        public string userName { get; set; }
+
+        [Column(CanBeNull = false)]
+        public string userPassword { get; set; }
+    }
 }

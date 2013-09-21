@@ -1,0 +1,29 @@
+﻿@model MyKitchen.Controllers.UsersController.RegistrationRazorModel
+
+<h2>Registration</h2>
+
+<body>
+    <div>Let's make a user account for My Kitchen!</div>
+    <div>
+        <span>
+            <label>Username:</label>
+            <input type="text" id="inputUsername" value="@Model.newUsername" size="11" style="width:auto"/>
+        </span>
+        <span>
+            <label>Password:</label>
+            <input type="text" id="inputPassword" value="@Model.newPassword" size="11" style="width:auto"/>
+        </span>
+    </div>
+    <br/>
+    <div>
+        <input type="button" id="buttonRegister" value="Register"/>
+    </div>
+    <br/>
+    <div>
+        <h4 style="display:none; color:red" id="failureMessage">Your username must consist of only letters and numbers!</h4>
+        <h4 style="display:none" id="successMessage">Thanks for registering!</h4>
+    </div>
+</body>
+
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Custom/Registration.js")" type="text/javascript"></script>

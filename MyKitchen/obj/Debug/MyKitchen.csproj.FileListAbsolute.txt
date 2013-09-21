@@ -34,3 +34,5 @@ C:\Projects\MyKitchen\MyKitchen\bin\System.Web.WebPages.Razor.xml
 C:\Projects\MyKitchen\MyKitchen\obj\Debug\MyKitchen.csprojResolveAssemblyReference.cache
 C:\Projects\MyKitchen\MyKitchen\obj\Debug\MyKitchen.dll
 C:\Projects\MyKitchen\MyKitchen\obj\Debug\MyKitchen.pdb
+C:\Projects\MyKitchen\MyKitchen\bin\MyKitchen.Database.dll
+C:\Projects\MyKitchen\MyKitchen\bin\MyKitchen.Database.pdb

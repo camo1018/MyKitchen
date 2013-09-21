@@ -11,5 +11,6 @@ namespace MyKitchen.Database
 
         IQueryable<Recipe> Recipe { get; }
         IQueryable<Ingredient> Ingredient { get; }
+        IQueryable<RegisteredUser> RegisteredUser { get; }
     }
 }
