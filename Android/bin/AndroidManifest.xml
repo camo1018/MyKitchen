@@ -8,7 +8,7 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
     
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.mykitchen.LoginActivity"
-            android:label="@string/title_activity_login"
+            android:label="@string/appName"
             android:windowSoftInputMode="adjustResize|stateVisible" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
