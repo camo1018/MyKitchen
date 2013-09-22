@@ -20,9 +20,9 @@ import android.view.View.OnClickListener;
 public class MyKitchenActivity extends Activity {
 	final Context context = this;
 	private Activity activity = this;
+	ScrollView scrollview = (ScrollView)findViewById(R.id.sv1);
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		final ScrollView scrollview = (ScrollView)findViewById(R.id.sv1);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_kitchen);
 		// Show the Up button in the action bar.
