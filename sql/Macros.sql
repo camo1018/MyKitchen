@@ -15,7 +15,7 @@ fetch next from ingredientCursor
 close ingredientCursor
 deallocate ingredientCursor
 go
-	
+
 --Populate nutrients in Recipe Table
 declare @id int
 declare nutrientCursor cursor
