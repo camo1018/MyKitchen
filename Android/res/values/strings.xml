@@ -15,6 +15,6 @@
     <string name="edit">Edit</string>
     <string name="username">Username</string>
     <string name="title_activity_search_list">Search Results</string>
-    <string name="webServer">http://192.168.1.90:82</string>
+    <string name="webServer">http://67.194.25.208:82</string>
 
 </resources>

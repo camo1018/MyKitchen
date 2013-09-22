@@ -66,7 +66,7 @@ public class LoginActivity extends Activity {
 	private View mLoginFormView;
 	private View mLoginStatusView;
 	private TextView mLoginStatusMessageView;
-	
+
 	private Intent intent;
 
 	@Override
@@ -120,7 +120,7 @@ public class LoginActivity extends Activity {
 	 */
 	public void attemptLogin() {
 	   intent = new Intent(this, MainActivity.class);
-		
+
 		if (mAuthTask != null) {
 			return;
 		}
@@ -224,7 +224,7 @@ public class LoginActivity extends Activity {
 			// TODO: attempt authentication against a network service.
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpPost httppost = new HttpPost(getString(R.string.webServer) + "/Users/Login");
-			
+
 			boolean finalResult = false;
 
 			try {
@@ -238,16 +238,16 @@ public class LoginActivity extends Activity {
 				String json = reader.readLine();
 				if (json.equals("true"))
 					finalResult = true;
-				
+
 			} catch (ClientProtocolException e) {
 				return false;
 			} catch (IOException e) {
 				return false;
 			}
-			
+
 			if (finalResult)
 				startActivity(intent);
-			
+
 			return finalResult;
 		}
 

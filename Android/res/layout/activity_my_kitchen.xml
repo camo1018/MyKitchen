@@ -18,7 +18,7 @@
         android:onClick="addToScroll" />
 
 	<ScrollView
-	    android:id="@+id/scrollView1"
+	    android:id="@+id/sv1"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_above="@+id/buttonAdd"

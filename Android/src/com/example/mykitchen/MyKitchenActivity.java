@@ -22,6 +22,7 @@ public class MyKitchenActivity extends Activity {
 	private Activity activity = this;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		final ScrollView scrollview = (ScrollView)findViewById(R.id.sv1);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_kitchen);
 		// Show the Up button in the action bar.
@@ -45,11 +46,21 @@ public class MyKitchenActivity extends Activity {
 			    dButton.setOnClickListener(new OnClickListener(){
 			    	public void onClick(View v){
 						String ingredient = editI.getText().toString();
+						TextView viewText1 = new TextView(context);
+						viewText1.setText("Ingredient:" + ingredient);
 						String quantity = editQ.getText().toString();
+						TextView viewText2 = new TextView(context);
+						viewText1.setText("#:" + quantity);
+						
+						LinearLayout lila = new LinearLayout(context);
+						lila.setOrientation(LinearLayout.HORIZONTAL);
+						lila.addView(viewText1);
+						lila.addView(viewText2);
+					    scrollview.addView(lila);
 			    		dialog.dismiss();
 			    	}
+			    	;
 			    });
-			    
 			    dialog.show();
 			    
 			}
