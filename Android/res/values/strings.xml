@@ -13,7 +13,11 @@
     <string name="remove">Remove</string>
     <string name="profile">Profile</string>
     <string name="edit">Edit</string>
+<<<<<<< HEAD
     <string name="username">Username</string>
     <string name="title_activity_search_list">Search Results</string>
+=======
+    <string name="webServer">http://192.168.1.90:82</string>
+>>>>>>> f9bd6c7b26a66ca3feb12ac8c94f03f49fca7784
 
 </resources>

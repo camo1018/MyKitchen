@@ -36,3 +36,42 @@ C:\Projects\MyKitchen\MyKitchen\obj\Debug\MyKitchen.dll
 C:\Projects\MyKitchen\MyKitchen\obj\Debug\MyKitchen.pdb
 C:\Projects\MyKitchen\MyKitchen\bin\MyKitchen.Database.dll
 C:\Projects\MyKitchen\MyKitchen\bin\MyKitchen.Database.pdb
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\MyKitchen.dll.config
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\MyKitchen.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\MyKitchen.pdb
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\Antlr3.Runtime.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\EntityFramework.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\MyKitchen.Database.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\Newtonsoft.Json.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Net.Http.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Net.Http.Formatting.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Net.Http.WebRequest.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Helpers.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Http.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Http.WebHost.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Mvc.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Optimization.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Providers.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Razor.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.WebPages.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.WebPages.Razor.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\WebGrease.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\MyKitchen.Database.pdb
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\EntityFramework.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\Newtonsoft.Json.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Net.Http.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Net.Http.Formatting.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Net.Http.WebRequest.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Helpers.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Http.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Http.WebHost.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Mvc.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.Razor.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.WebPages.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\bin\System.Web.WebPages.Razor.xml
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\obj\Debug\MyKitchen.csprojResolveAssemblyReference.cache
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\obj\Debug\MyKitchen.dll
+C:\Users\Keagan\Documents\Visual Studio 2013\Projects\MyKitchen\MyKitchen\obj\Debug\MyKitchen.pdb
