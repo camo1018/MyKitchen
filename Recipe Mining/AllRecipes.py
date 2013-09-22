@@ -5,6 +5,7 @@ import time
 import sys
 from sqlalchemy import *
 import re
+import pymysql
 
 class AllRecipes:
     def __init__(self, url):
@@ -71,21 +72,24 @@ class AllRecipes:
 
     def getNutrition(self):
         nutritionTable = self.soup.find("div",{"id":"nutritiontable"})
-        summary = nutritionTable.find("p",{"class":"top"})
-        
-        servingSize = summary.find("span",{"itemprop":"servingSize"}).string
-        calories = int(summary.find("span",{"id":"litCalories"}).string)
-        caloriesFromFat = int(summary.find_all("strong")[1].string)
-
+        nutritionList = []
+        servingSize = None;
+        calories = None;
+        caloriesFromFat = None;
+        if nutritionTable:
+            summary = nutritionTable.find("p",{"class":"top"})
+            servingSize = summary.find("span",{"itemprop":"servingSize"}).string
+            calories = int(summary.find("span",{"id":"litCalories"}).string)
+            caloriesFromFat = int(summary.find_all("strong")[1].string)
+            nutritionList = nutritionTable.find("ul",{"class":"nutrDetList"}).find_all("li")
         nutritionFacts = []
-        nutritionList = nutritionTable.find("ul",{"class":"nutrDetList"}).find_all("li")
         for i in range(1,len(nutritionList)):
             element = ()
             for x in nutritionList[i].find_all("span"):
                 if x.string != None:
                     element+=(x.string.replace("*",""),)
             if i==1 :
-                element += ('Total Fat',)+element
+                element = ('Total Fat',)+element
             nutritionFacts.append(element)
 
         return [servingSize,calories,caloriesFromFat,nutritionFacts]
@@ -93,39 +97,48 @@ class AllRecipes:
 if __name__=="__main__":
     option = input("Populate Ingredients table(1)\n Populate Recipe Table(2)\n Test one row(3)\n Terminate(*)\n")
     if option == "1":
-        print("\ndialect+driver://username:password@host:port/database\n")
-        success = False
-        while(not success):
-            dbUrl  = input("Enter :")
-            try:
-                engine = create_engine(dbUrl)
-                cur = engine.cursor()
-                success = True
-            except:
-                print("ERROR")
-                print("\ndialect+driver://username:password@host:port/database\n")
-        for i in range(1,101):
+        user_input=input("user")
+        passwd_input=input("passwd")
+        host_input=input("host")
+        db_input = input("db")
+        connection = pymysql.connect(user=user_input,passwd=passwd_input,host=host_input,db=db_input)
+        cur = connection.cursor()
+
+        for i in range(1,2):
             print("PAGE %d OF 101"%i)
             req = urllib.request.urlopen("http://www.recipepuppy.com/api/?p="+str(i))
             data = json.loads(req.read().decode('utf-8'))
             urls = [ele['href'] for ele in data['results']]
             for x in urls:
+                connection = pymysql.connect(user=user_input,passwd=passwd_input,host=host_input,db=db_input)
+                cur = connection.cursor()
                 print("\tPARSING: "+x)
-                recipe = AllRecipes(x);
+                try:
+                    recipe = AllRecipes(x);
+                except:
+                    print("random redirect error dang man")
                 for t in recipe.getIngredients():
-                    cur.execute("INSERT INTO Ingredients(name) VALUES(%s) WHERE NOT EXISTS (SELECT * FROM Ingredients WHERE name =%s"%(t,t))
+                    pattern = re.compile("[a-zA-Z]+")
+                    units = pattern.search(t[0])
+                    if units:
+                        units = units.group()
+                    else:
+                        units = ""
+                    try:
+                        cur.execute("INSERT INTO ingredient(ingredientName,measuringUnit) VALUES('%s','%s') "%(units,t[1].replace("'","")))
+                    except:
+                        print("random error ug")
+                pattern2 = re.compile("[0-9]+")
+                tups = recipe.getNutrition()[3]
+                for q in range(len(tups)):
+                    cur.execute("INSERT INTO Nutrient(nutrientName) VALUES('%s') "%(tups[q][0])
+                connection.commit()
+                cur.close()
+                connection.close()
     elif option == "2":
-        print("\ndialect+driver://username:password@host:port/database\n")
-        success = False
-        while(not success):
-            dbUrl  = input("Enter :")
-            try:
-                engine = create_engine(dbUrl)
-                cur = engine.cursor()
-                success = True
-            except:
-                print("ERROR")
-                print("\ndialect+driver://username:password@host:port/database\n")
+        connection = pymysql.connect(user=input("user"),passwd=input("passwd"),host=input("host"),db=input("db"))
+        cur = connection.cursor()
+        success = True
         for i in range(1,101):
             print("PAGE %d OF 101"%i)
             req = urllib.request.urlopen("http://www.recipepuppy.com/api/?p="+str(i))
@@ -134,18 +147,17 @@ if __name__=="__main__":
             for x in urls:
                 print("\tPARSING: "+x)
                 recipe = AllRecipes(x)
-                pattern = re.compile("[0-9]+")
                 nutritions = recipe.getNutrition()
-                query1 = "INSERT INTO Recipe(name,portion,timeToPrep,directions,ServingSize,Calories, CaloriesFromFat"
+                query1 = "INSERT INTO Recipe(recipeName,imageUrl,portion,timeToComplete,directions,ServingSize,Calories, CaloriesFromFat"
                 query2 = "VALUES('%s','%s','%s',%d,'%s','%s',%d,%d"%(recipe.getName(),recipe.getImageSrc(),recipe.getPortion(),recipe.getTimeToPrep(),recipe.getDirections(),nutritions[0],nutritions[1],nutritions[2])
                 ingreds = recipe.getIngredients()
                 for ingNum in range(ingreds):
-                    ingKey = cur.execute("SELECT id FROM Ingredients WHERE name = '%s'"%ingreds[ingNum][1])['id']
+                    ingKey = cur.execute("SELECT id FROM ingredients WHERE ingredientName = '%s'"%ingreds[ingNum][1]).fetchall()[0]
                     query1 += ",Ingredient"+str(ingKey)
                     query2 += ",'%s'"%ingreds[ingNum][0]
                 nutrients = nutritions[3]
                 for nut in nutrients:
-                    nutKey = cur.execute("SELECT id FROM Nutrient WHERE name = '%s'"%nut[0])
+                    nutKey = cur.execute("SELECT id FROM Nutrient WHERE nutrientName = '%s'"%nut[0]).fetchall()[0]
                     query1+= ",Nutrient"+str(nutKey)
                     if nut[2]:
                         percentage = int(nut[2].replace("%","").replace(" ",""))
@@ -154,20 +166,16 @@ if __name__=="__main__":
                     query2+=",%d"%(nutKey,percentage)
                 finalQuery = query1+") "+query2+")"
                 cur.execute(finalQuery)
+                connection.commit()
+                cur.close()
+                connection.close()
                     
     elif option == "3":
-        print("\ndialect+driver://username:password@host:port/database\n")
-        success = False
-        while(not success):
-            dbUrl  = input("Enter :")
-            try:
-                engine = create_engine(dbUrl)
-                cur = engine.cursor()
-                success = True
-            except:
-                print("ERROR")
-                print("\ndialect+driver://username:password@host:port/database\n")
-        cur.execute("INSERT INTO Ingredients('name') VALUES('TEST')")
+        connection = pymysql.connect(user=input("user"),passwd=input("passwd"),host=input("host"),db=input("db"))
+        cur = connection.cursor()
+        cur.execute("INSERT INTO ingredient(ingredientName, measuringUnit) VALUES('TEST','litres')")
+        cur.close()
+        connection.close()
     else:
         sys.exit(0);
 
