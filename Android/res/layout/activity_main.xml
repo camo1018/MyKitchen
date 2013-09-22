@@ -21,13 +21,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/buttonFavorites"
-        android:layout_alignLeft="@+id/frameLayout1"
         android:layout_alignRight="@+id/buttonKitchen"
-        android:layout_alignTop="@+id/buttonFavorites"
+        android:layout_below="@+id/imageView1"
+        android:background="#6dc757"
+        android:minWidth="135dp"
         android:onClick="goTo"
         android:text="My\nProfile"
-        android:textColor="#ffffff"
-        android:background="#6dc757" />
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/buttonKitchen"
@@ -36,11 +36,12 @@
         android:layout_above="@+id/imageView1"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/buttonSearch"
+        android:background="#6dc757"
+        android:maxWidth="135dp"
+        android:minWidth="135dp"
         android:onClick="goTo"
         android:text="My\nKitchen"
-        android:textColor="#ffffff"
-        android:background="#6dc757"  />
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/buttonFavorites"
@@ -49,24 +50,11 @@
         android:layout_alignLeft="@+id/imageView1"
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/imageView1"
-        android:layout_toLeftOf="@+id/buttonProfile"
+        android:background="#6dc757"
+        android:minWidth="135dp"
         android:onClick="goTo"
         android:text="My\nFavorites"
-        android:textColor="#ffffff"
-        android:background="#6dc757"  />
-
-    <Button
-        android:id="@+id/buttonSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/buttonKitchen"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/frameLayout1"
-        android:onClick="goTo"
-        android:text="Search\nRecipe"
-        android:textColor="#ffffff"
-        android:background="#6dc757"  />
+        android:textColor="#ffffff" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -78,5 +66,18 @@
         android:paddingLeft="10dp"
         android:paddingTop="30dp"
         android:src="@drawable/logo2" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#6dc757"
+        android:minWidth="135dp"
+        android:onClick="goTo"
+        android:text="Search\nRecipe"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>
