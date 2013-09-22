@@ -49,14 +49,21 @@ namespace MyKitchen.Controllers
         [HttpPost]
         public ActionResult Login(string username, string password)
         {
-            var hasAny = this.Database.RegisteredUser.Any(user => user.userName == username && user.userPassword == password);
+            if (!this.Database.RegisteredUser.Any(user => user.userName == username && user.userPassword == password))
+                return Json(0);
 
-            return Json(hasAny);
+            var userId = this.Database.RegisteredUser.First(user => user.userName == username && user.userPassword == password).ID;
+
+            return Json(userId);
         }
 
         [HttpPost]
-        public ActionResult SearchRecipes(List<float> userIngredients, int userId, int budget, int alottedTime, int healthiness)
+        public ActionResult SearchRecipes(string userId, string budgetStr, string alottedTimeStr, string healthinessStr)
         {
+            int budget = Int32.Parse(budgetStr);
+            int alottedTime = Int32.Parse(alottedTimeStr);
+            int healthiness = Int32.Parse(healthinessStr);
+
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MyKitchenDatabaseConnectionString"].ToString();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -71,7 +78,9 @@ namespace MyKitchen.Controllers
 
                 var makeableRecipes = healthiestRecipes;
 
-                for (int i = 1; i < userIngredients.Count + 1; i++)
+                int ingredientsCount = this.Database.Ingredient.Count();
+
+                for (int i = 1; i < ingredientsCount + 1; i++)
                 {
                     int userIngredientCount = 0;
                     using (
@@ -99,7 +108,7 @@ namespace MyKitchen.Controllers
 
                 // Nutrition comes into play later.
                 // For now, order by the cooking duration.
-                return Json(makeableRecipes.OrderBy(x => x.timeToComplete).ToList());
+                return Json(makeableRecipes.OrderBy(x => x.timeToComplete).Select(x => x.ID).ToList());
             }
         }
     }
