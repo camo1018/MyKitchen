@@ -14,8 +14,11 @@ import android.app.*;
 import android.view.View;
 import android.content.DialogInterface;
 import android.widget.*;
+import android.content.Context;
+import android.view.View.OnClickListener;
 
 public class MyKitchenActivity extends Activity {
+	final Context context = this;
 	private Activity activity = this;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,33 @@ public class MyKitchenActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		Intent intent = getIntent();
+		Button button = (Button)findViewById(R.id.buttonAdd);
+		button.setOnClickListener(new OnClickListener(){
+			public void onClick(View view){
+			    final Dialog dialog = new Dialog(context);
+			    dialog.setContentView(R.layout.dialogue);
+			    dialog.setTitle("Title...");
+			    TextView text1 = (TextView) dialog.findViewById(R.id.tv1);
+			    text1.setText("Ingredient:");
+			    final EditText editI = (EditText) dialog.findViewById(R.id.etI);
+			    editI.setText("");
+			    TextView text2 = (TextView) dialog.findViewById(R.id.tv2);
+			    text2.setText("Quantity:");
+			    final EditText editQ = (EditText) dialog.findViewById(R.id.etq);
+			    editQ.setText("");
+			    Button dButton = (Button)dialog.findViewById(R.id.buttonOk);
+			    dButton.setOnClickListener(new OnClickListener(){
+			    	public void onClick(View v){
+						String ingredient = editI.getText().toString();
+						String quantity = editQ.getText().toString();
+			    		dialog.dismiss();
+			    	}
+			    });
+			    
+			    dialog.show();
+			    
+			}
+		});
 	}
 
 	/**
@@ -44,14 +74,25 @@ public class MyKitchenActivity extends Activity {
 	}
 	
 	public void addToScroll(){
-	    final Dialog dialog = new Dialog(activity);
+	    final Dialog dialog = new Dialog(context);
 	    dialog.setContentView(R.layout.dialogue);
-	    TextView text1 = (TextView) dialog.findViewById(R.id.textView1);
+	    dialog.setTitle("Title...");
+	    TextView text1 = (TextView) dialog.findViewById(R.id.tv1);
 	    text1.setText("Ingredient:");
-	    EditText editI = (EditText) dialog.findViewById(R.id.editTextI);
-	    TextView text2 = (TextView) dialog.findViewById(R.id.TextView01);
+	    EditText editI = (EditText) dialog.findViewById(R.id.etI);
+	    editI.setText("Yo nig");
+	    TextView text2 = (TextView) dialog.findViewById(R.id.tv2);
 	    text2.setText("Quantity:");
-	    EditText editQ = (EditText) dialog.findViewById(R.id.EditTextQ);
+	    EditText editQ = (EditText) dialog.findViewById(R.id.etq);
+	    editQ.setText("yoyonig");
+	    Button dButton = (Button)dialog.findViewById(R.id.buttonOk);
+	    dButton.setOnClickListener(new OnClickListener(){
+	    	public void onClick(View v){
+	    		dialog.dismiss();
+	    	}
+	    });
+	    
+	    dialog.show();
 	    
 	}
 	
