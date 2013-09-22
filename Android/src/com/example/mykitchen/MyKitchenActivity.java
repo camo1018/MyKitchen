@@ -2,15 +2,24 @@ package com.example.mykitchen;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
+import android.app.*;
+import android.view.View;
+import android.content.DialogInterface;
+import android.widget.*;
+import android.content.Context;
+import android.view.View.OnClickListener;
 
 public class MyKitchenActivity extends Activity {
-
+	final Context context = this;
+	private Activity activity = this;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -18,6 +27,33 @@ public class MyKitchenActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		Intent intent = getIntent();
+		Button button = (Button)findViewById(R.id.buttonAdd);
+		button.setOnClickListener(new OnClickListener(){
+			public void onClick(View view){
+			    final Dialog dialog = new Dialog(context);
+			    dialog.setContentView(R.layout.dialogue);
+			    dialog.setTitle("Title...");
+			    TextView text1 = (TextView) dialog.findViewById(R.id.tv1);
+			    text1.setText("Ingredient:");
+			    final EditText editI = (EditText) dialog.findViewById(R.id.etI);
+			    editI.setText("");
+			    TextView text2 = (TextView) dialog.findViewById(R.id.tv2);
+			    text2.setText("Quantity:");
+			    final EditText editQ = (EditText) dialog.findViewById(R.id.etq);
+			    editQ.setText("");
+			    Button dButton = (Button)dialog.findViewById(R.id.buttonOk);
+			    dButton.setOnClickListener(new OnClickListener(){
+			    	public void onClick(View v){
+						String ingredient = editI.getText().toString();
+						String quantity = editQ.getText().toString();
+			    		dialog.dismiss();
+			    	}
+			    });
+			    
+			    dialog.show();
+			    
+			}
+		});
 	}
 
 	/**
@@ -36,7 +72,30 @@ public class MyKitchenActivity extends Activity {
 		getMenuInflater().inflate(R.menu.my_kitchen, menu);
 		return true;
 	}
-
+	
+	public void addToScroll(){
+	    final Dialog dialog = new Dialog(context);
+	    dialog.setContentView(R.layout.dialogue);
+	    dialog.setTitle("Title...");
+	    TextView text1 = (TextView) dialog.findViewById(R.id.tv1);
+	    text1.setText("Ingredient:");
+	    EditText editI = (EditText) dialog.findViewById(R.id.etI);
+	    editI.setText("Yo nig");
+	    TextView text2 = (TextView) dialog.findViewById(R.id.tv2);
+	    text2.setText("Quantity:");
+	    EditText editQ = (EditText) dialog.findViewById(R.id.etq);
+	    editQ.setText("yoyonig");
+	    Button dButton = (Button)dialog.findViewById(R.id.buttonOk);
+	    dButton.setOnClickListener(new OnClickListener(){
+	    	public void onClick(View v){
+	    		dialog.dismiss();
+	    	}
+	    });
+	    
+	    dialog.show();
+	    
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

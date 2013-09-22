@@ -28,69 +28,11 @@ namespace MyKitchen.Database
         public int timeToComplete { get; set; }
 
         [Column]
-        public int ingredient1ID { get; set; }
+        public string instruction { get; set; }
 
-        [Association(IsForeignKey = true, OtherKey = "ID", ThisKey = "ingredient1Id", Storage = "_ingredient")]
-        public Ingredient ingredient1
-        {
-            get { return _ingredient.Entity; }
-            set { _ingredient.Entity = value; ID = value.ID; }
-        }
+        // Ingredients
 
-        [Column]
-        public float ingredient1Count { get; set; }
-
-        [Column]
-        public int ingredient2ID { get; set; }
-
-        [Association(IsForeignKey = true, OtherKey = "ID", ThisKey = "ingredient2Id", Storage = "_ingredient")]
-        public Ingredient ingredient2
-        {
-            get { return _ingredient.Entity; }
-            set { _ingredient.Entity = value; ID = value.ID; }
-        }
-
-        [Column]
-        public float ingredient2Count { get; set; }
-
-        [Column]
-        public int ingredient3Id { get; set; }
-
-        [Association(IsForeignKey = true, OtherKey = "ID", ThisKey = "ingredient3Id", Storage = "_ingredient")]
-        public Ingredient ingredient3
-        {
-            get { return _ingredient.Entity; }
-            set { _ingredient.Entity = value; ID = value.ID; }
-        }
-
-        [Column]
-        public float ingredient3Count { get; set; }
-
-        [Column]
-        public int ingredient4Id { get; set; }
-
-        [Association(IsForeignKey = true, OtherKey = "ID", ThisKey = "ingredient4Id", Storage = "_ingredient")]
-        public Ingredient ingredient4
-        {
-            get { return _ingredient.Entity; }
-            set { _ingredient.Entity = value; ID = value.ID; }
-        }
-
-        [Column]
-        public float ingredient4Count { get; set; }
-
-        [Column]
-        public int ingredient5Id { get; set; }
-
-        [Association(IsForeignKey = true, OtherKey = "ID", ThisKey = "ingredient5Id", Storage = "_ingredient")]
-        public Ingredient ingredient5
-        {
-            get { return _ingredient.Entity; }
-            set { _ingredient.Entity = value; ID = value.ID; }
-        }
-
-        [Column]
-        public float ingredient5Count { get; set; }
+        // Nutrients
     }
 
     [Table]
@@ -117,5 +59,45 @@ namespace MyKitchen.Database
 
         [Column(CanBeNull = false)]
         public string userPassword { get; set; }
+    }
+
+    [Table]
+    public class Nutrient
+    {
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        public int ID { get; set; }
+
+        [Column(CanBeNull = false)]
+        public string nutrientName { get; set; }
+    }
+
+    [Table]
+    public class UserRecipe
+    {
+        private EntityRef<Recipe> _recipe;
+
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        public int ID { get; set; }
+
+        [Column(CanBeNull = false)]
+        public int recipeId { get; set; }
+
+        [Association(IsForeignKey = true, OtherKey = "ID", ThisKey = "recipeId", Storage = "_recipe")]
+        public Recipe recipe
+        {
+            get { return _recipe.Entity; }
+            set { _recipe.Entity = value; ID = value.ID; }
+        }
+    }
+
+    [Table]
+    public class UserIngredient
+    {
+        private EntityRef<Ingredient> _ingredient;
+
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        public int ID { get; set; }
+
+        // Ingredients
     }
 }

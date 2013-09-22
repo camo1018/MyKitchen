@@ -36,6 +36,8 @@ public class MyProfileActivity extends Activity {
 		getMenuInflater().inflate(R.menu.my_profile, menu);
 		return true;
 	}
+	
+	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

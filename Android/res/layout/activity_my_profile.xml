@@ -18,7 +18,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/buttonCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -32,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/buttonCancel"
         android:layout_marginBottom="28dp" >
 
         <LinearLayout
@@ -48,8 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/scrollView1"
         android:layout_alignLeft="@+id/scrollView1"
-        android:layout_alignTop="@+id/button1"
-        android:layout_toLeftOf="@+id/button1"
+        android:layout_alignTop="@+id/buttonCancel"
+        android:layout_toLeftOf="@+id/buttonCancel"
         android:text="@string/profile"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="35sp" />

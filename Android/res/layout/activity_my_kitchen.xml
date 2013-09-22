@@ -14,16 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:minWidth="100dip"
-        android:text="@string/add" />
-
-	<Button
-	    android:id="@+id/button"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentBottom="true"
-	    android:layout_alignParentRight="true"
-	    android:minWidth="100dip"
-	    android:text="@string/remove" />
+        android:text="@string/add"
+        android:onClick="addToScroll" />
 
 	<ScrollView
 	    android:id="@+id/scrollView1"
