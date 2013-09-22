@@ -23,7 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp" />
+        android:layout_marginTop="68dp"
+        android:indeterminate="false"
+        android:max="120"
+        android:progress="60"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/textView3"
@@ -32,7 +36,7 @@
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignRight="@+id/seekBarT"
-        android:text="Generous"
+        android:text="Lots of time!"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#6ac754" />
 
@@ -42,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/seekBarT"
         android:layout_below="@+id/seekBarT"
-        android:text="Conservative"
+        android:text="No time!"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#6ac754" />
 
@@ -103,18 +107,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/TextView03"
         android:layout_below="@+id/TextView01"
-        android:layout_marginTop="81dp" />
-
-    <TextView
-        android:id="@+id/TextView05"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView01"
-        android:layout_below="@+id/seekBarH"
-        android:layout_marginTop="14dp"
-        android:text="Generous"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#6ac754" />
+        android:layout_marginTop="81dp"
+        android:max="10"
+        android:progress="5" />
 
     <TextView
         android:id="@+id/TextView06"
@@ -123,7 +118,7 @@
         android:layout_alignBaseline="@+id/TextView05"
         android:layout_alignBottom="@+id/TextView05"
         android:layout_alignLeft="@+id/seekBarH"
-        android:text="Conservative"
+        android:text="No care"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#6ac754" />
 
@@ -144,7 +139,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/linearLayout1"
-        android:layout_alignLeft="@+id/textView2" />
+        android:layout_alignLeft="@+id/textView2"
+        android:max="10"
+        android:progress="5" />
 
     <TextView
         android:id="@+id/TextView04"
@@ -168,5 +165,57 @@
         android:text="Search"
         android:textColor="#ffffff" 
         android:onClick="onClick"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/buttonSearchSearch"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/timerCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarT"
+        android:layout_centerHorizontal="true"
+        android:text="60 min"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarH"
+        android:layout_toRightOf="@+id/TextView04"
+        android:text="Healthy"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#6ac754" />
+
+    <LinearLayout
+        android:id="@+id/post_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:visibility="visible" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/post_status_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/searchingRecipe"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
 
 </RelativeLayout>

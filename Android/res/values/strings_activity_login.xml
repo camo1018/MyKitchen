@@ -13,10 +13,7 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-<<<<<<< HEAD
     <string name="logout">Logout</string>
-=======
->>>>>>> f9bd6c7b26a66ca3feb12ac8c94f03f49fca7784
     
 
 </resources>

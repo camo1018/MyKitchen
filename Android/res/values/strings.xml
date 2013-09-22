@@ -16,5 +16,6 @@
     <string name="username">Username</string>
     <string name="title_activity_search_list">Search Results</string>
     <string name="webServer">http://67.194.25.208:82</string>
+    <string name="searchingRecipe">Finding the best matching recipes...</string>
 
 </resources>

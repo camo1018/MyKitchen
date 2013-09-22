@@ -14,14 +14,12 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONTokener;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -55,6 +53,7 @@ public class LoginActivity extends Activity {
 	 * Keep track of the login task to ensure we can cancel it if requested.
 	 */
 	private UserLoginTask mAuthTask = null;
+	private Application application = this.getApplication();
 
 	// Values for email and password at the time of the login attempt.
 	private String mEmail;
@@ -94,8 +93,8 @@ public class LoginActivity extends Activity {
 		});
 
 		mLoginFormView = findViewById(R.id.login_form);
-		mLoginStatusView = findViewById(R.id.login_status);
-		mLoginStatusMessageView = (TextView) findViewById(R.id.login_status_message);
+		mLoginStatusView = findViewById(R.id.post_status);
+		mLoginStatusMessageView = (TextView) findViewById(R.id.post_status_message);
 
 		findViewById(R.id.sign_in_button).setOnClickListener(
 				new View.OnClickListener() {
@@ -225,7 +224,7 @@ public class LoginActivity extends Activity {
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpPost httppost = new HttpPost(getString(R.string.webServer) + "/Users/Login");
 
-			boolean finalResult = false;
+			int userId = 0;
 
 			try {
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
@@ -236,19 +235,19 @@ public class LoginActivity extends Activity {
 				HttpResponse response = httpclient.execute(httppost);
 				BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
 				String json = reader.readLine();
-				if (json.equals("true"))
-					finalResult = true;
-
+				userId = Integer.parseInt(json);
 			} catch (ClientProtocolException e) {
 				return false;
 			} catch (IOException e) {
 				return false;
 			}
 
-			if (finalResult)
+			if (userId > 0) {
+				((MyApplication) application).setUserId(userId);
 				startActivity(intent);
-
-			return finalResult;
+				return true;
+			}
+			return false;
 		}
 
 		@Override
