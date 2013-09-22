@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AbsoluteLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity" >
+
+    <EditText
+        android:id="@+id/editTextI"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:layout_x="17dp"
+        android:layout_y="144dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="146dp"
+        android:layout_height="46dp"
+        android:layout_x="22dp"
+        android:layout_y="93dp"
+        android:text="Ingredient"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#6ac754" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="146dp"
+        android:layout_height="46dp"
+        android:layout_x="24dp"
+        android:layout_y="196dp"
+        android:text="Quantity"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#6ac754" />
+
+    <EditText
+        android:id="@+id/EditTextQ"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_x="26dp"
+        android:layout_y="238dp"
+        android:ems="10" />
+
+</AbsoluteLayout>

@@ -13,5 +13,7 @@
     <string name="remove">Remove</string>
     <string name="profile">Profile</string>
     <string name="edit">Edit</string>
+    <string name="username">Username</string>
+    <string name="title_activity_search_list">Search Results</string>
 
 </resources>

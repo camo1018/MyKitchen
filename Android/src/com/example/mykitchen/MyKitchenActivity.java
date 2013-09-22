@@ -2,15 +2,21 @@ package com.example.mykitchen;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
+import android.app.*;
+import android.view.View;
+import android.content.DialogInterface;
+import android.widget.*;
 
 public class MyKitchenActivity extends Activity {
-
+	private Activity activity = this;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,7 +42,19 @@ public class MyKitchenActivity extends Activity {
 		getMenuInflater().inflate(R.menu.my_kitchen, menu);
 		return true;
 	}
-
+	
+	public void addToScroll(){
+	    final Dialog dialog = new Dialog(activity);
+	    dialog.setContentView(R.layout.dialogue);
+	    TextView text1 = (TextView) dialog.findViewById(R.id.textView1);
+	    text1.setText("Ingredient:");
+	    EditText editI = (EditText) dialog.findViewById(R.id.editTextI);
+	    TextView text2 = (TextView) dialog.findViewById(R.id.TextView01);
+	    text2.setText("Quantity:");
+	    EditText editQ = (EditText) dialog.findViewById(R.id.EditTextQ);
+	    
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

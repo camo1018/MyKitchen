@@ -36,26 +36,43 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int logo2=0x7f020001;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f090013;
-        public static final int button=0x7f090010;
-        public static final int button1=0x7f090012;
+        public static final int AbsoluteLayout1=0x7f090020;
+        public static final int EditTextQ=0x7f090022;
+        public static final int LinearLayout01=0x7f090015;
+        public static final int LinearLayout02=0x7f090019;
+        public static final int TextView01=0x7f090016;
+        public static final int TextView02=0x7f09001d;
+        public static final int TextView03=0x7f090018;
+        public static final int TextView04=0x7f09001e;
+        public static final int TextView05=0x7f09001b;
+        public static final int TextView06=0x7f09001c;
+        public static final int action_forgot_password=0x7f090023;
+        public static final int action_settings=0x7f090024;
         public static final int buttonAdd=0x7f09000f;
+        public static final int buttonCancel=0x7f090011;
         public static final int buttonFavorites=0x7f09000a;
         public static final int buttonKitchen=0x7f09000b;
         public static final int buttonProfile=0x7f090009;
         public static final int buttonSearch=0x7f09000c;
+        public static final int buttonSearchSearch=0x7f09001f;
+        public static final int editTextI=0x7f090021;
         public static final int email=0x7f090004;
         public static final int frameLayout1=0x7f090008;
         public static final int imageView1=0x7f090003;
-        public static final int linearLayout1=0x7f090011;
+        public static final int linearLayout1=0x7f090010;
         public static final int login=0x7f090006;
         public static final int login_form=0x7f090002;
         public static final int login_status=0x7f090000;
         public static final int login_status_message=0x7f090001;
         public static final int password=0x7f090005;
         public static final int scrollView1=0x7f09000e;
+        public static final int seekBarB=0x7f090017;
+        public static final int seekBarH=0x7f09001a;
+        public static final int seekBarT=0x7f090012;
         public static final int sign_in_button=0x7f090007;
         public static final int textView1=0x7f09000d;
+        public static final int textView2=0x7f090014;
+        public static final int textView3=0x7f090013;
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
@@ -63,7 +80,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_my_favorites=0x7f030002;
         public static final int activity_my_kitchen=0x7f030003;
         public static final int activity_my_profile=0x7f030004;
-        public static final int activity_search_recipe=0x7f030005;
+        public static final int activity_search_list=0x7f030005;
+        public static final int activity_search_recipe=0x7f030006;
+        public static final int dialogue=0x7f030007;
     }
     public static final class menu {
         public static final int login=0x7f080000;
@@ -71,34 +90,39 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int my_favorites=0x7f080002;
         public static final int my_kitchen=0x7f080003;
         public static final int my_profile=0x7f080004;
-        public static final int search_recipe=0x7f080005;
+        public static final int search_list=0x7f080005;
+        public static final int search_recipe=0x7f080006;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f060011;
+        public static final int action_forgot_password=0x7f060014;
         public static final int action_settings=0x7f060001;
-        public static final int action_sign_in_register=0x7f06000f;
-        public static final int action_sign_in_short=0x7f060010;
+        public static final int action_sign_in_register=0x7f060012;
+        public static final int action_sign_in_short=0x7f060013;
         public static final int add=0x7f060008;
+        public static final int appName=0x7f06000e;
         public static final int app_name=0x7f060000;
         public static final int edit=0x7f06000b;
-        public static final int error_field_required=0x7f060016;
-        public static final int error_incorrect_password=0x7f060015;
-        public static final int error_invalid_email=0x7f060013;
-        public static final int error_invalid_password=0x7f060014;
+        public static final int error_field_required=0x7f060019;
+        public static final int error_incorrect_password=0x7f060018;
+        public static final int error_invalid_email=0x7f060016;
+        public static final int error_invalid_password=0x7f060017;
         public static final int hello_world=0x7f060002;
-        public static final int login_progress_signing_in=0x7f060012;
+        public static final int login_progress_signing_in=0x7f060015;
+        public static final int logout=0x7f06001a;
         public static final int profile=0x7f06000a;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f06000d;
-        public static final int prompt_password=0x7f06000e;
+        public static final int prompt_email=0x7f060010;
+        public static final int prompt_password=0x7f060011;
         public static final int remove=0x7f060009;
-        public static final int title_activity_login=0x7f06000c;
+        public static final int title_activity_login=0x7f06000f;
         public static final int title_activity_my_favorites=0x7f060006;
         public static final int title_activity_my_kitchen=0x7f060005;
         public static final int title_activity_my_profile=0x7f060007;
         public static final int title_activity_search=0x7f060003;
+        public static final int title_activity_search_list=0x7f06000d;
         public static final int title_activity_search_recipe=0x7f060004;
+        public static final int username=0x7f06000c;
     }
     public static final class style {
         /** 
